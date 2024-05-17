@@ -1,25 +1,22 @@
 pipeline{
     agent any
     stages{
-        stage("build"){
+        stage("run frontend"){
             steps{
-                // npm i 
-                // npm build
-                echo "========building the Application========"
-                echo "new change"
+                echo "ecex npm ..."
+                nodejs('nodeJS-tool-test-22.2.0') {
+                    sh 'npm i'
+                    sh 'npm build'
+                }
             }
         }
-        stage("test") {
+        stage("run backend") {
             steps{
                 // npm test
                 echo "========tesing the Application========"
             }
         }
-        stage("deploy") {
-            steps{
-                echo "========deploying the Application========"
-            } 
-        }
+        
     }
     
 }
