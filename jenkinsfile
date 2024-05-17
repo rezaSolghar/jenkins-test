@@ -5,8 +5,8 @@ pipeline{
             steps{
                 echo "ecex npm ..."
                 nodejs('nodeJS-tool-test-22.2.0') {
-                    sh 'npm i'
-                    sh 'npm build'
+                    sh 'yarn install'
+                    sh 'yarn build'
                 }
             }
         }
