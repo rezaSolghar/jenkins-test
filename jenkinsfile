@@ -6,6 +6,7 @@ pipeline{
                 // npm i 
                 // npm build
                 echo "========building the Application========"
+                echo "new change"
             }
         }
         stage("test") {
