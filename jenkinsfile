@@ -3,6 +3,8 @@ pipeline{
     stages{
         stage("build"){
             steps{
+                // npm i 
+                // npm build
                 echo "========building the Application========"
             }
             post{
@@ -19,7 +21,24 @@ pipeline{
         }
         stage("test") {
             steps{
+                // npm test
                 echo "========tesing the Application========"
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+        stage("deploy") {
+            steps{
+                echo "========deploying the Application========"
             }
             post{
                 always{
